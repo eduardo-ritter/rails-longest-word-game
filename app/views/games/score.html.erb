@@ -1,0 +1,11 @@
+<div class="container pt-3">
+  <%# AVALIACAO DA RESPOSTA %>
+  <p>As letras utilizadas estão no array? <strong><em><%=@answer_verification%></em></strong>.</p>
+  <p>A palavra respondida pertence ao dicionário? <strong><em><%=@dictionary_verification%></em></strong>.</p>
+
+  <%# MARCADOR DE TEMPO %>
+  <p>Você gastou <strong><%= @total_time.round(2) %> segundos</strong> para responder.</p>
+  
+  <%# SCORE FINAL %>
+  <p>Sua pontuação: <strong style="color: blue; font-size: 20px; text-shadow: 0 0 1px black"><%= @total_score %></strong> /10</p>
+</div>

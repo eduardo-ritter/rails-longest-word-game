@@ -1,0 +1,20 @@
+<%# LETRAS ALEATORIAS %>
+<p class="container">your letters:</p>
+<div class="container d-flex text-center p-3">
+  <% @letters.each do |letter| %>
+    <div class="mr-3 pt-1 letter"><%=letter%></div>
+  <% end %>
+</div>
+
+
+
+
+
+<%# RESPOSTA DO USUARIO %>
+<form action="/score" class="container" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="answer" placeholder="your answer...">
+  <input type="submit">
+  <%# CRIACAO DE 2 CHAVES INVISIVEIS PARA ENVIAR VALORES PARA O SCORE %>
+  <input type="hidden" name="start_time" value="<%=Time.now%>">
+</form>
